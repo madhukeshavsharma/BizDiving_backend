@@ -4,7 +4,7 @@ import winston from 'winston';
 import winstonDaily from 'winston-daily-rotate-file';
 
 // logs dir
-const logDir: string = './logs';
+const logDir = './logs';
 
 if (!existsSync(logDir)) {
   mkdirSync(logDir);
@@ -32,7 +32,7 @@ const logger = winston.createLogger({
       level: 'debug',
       datePattern: 'YYYY-MM-DD',
       dirname: logDir + '/debug', // log file /logs/debug/*.log in save
-      filename: `%DATE%.log`,
+      filename: '%DATE%.log',
       maxFiles: 30, // 30 Days saved
       json: false,
       zippedArchive: true,
@@ -42,7 +42,7 @@ const logger = winston.createLogger({
       level: 'error',
       datePattern: 'YYYY-MM-DD',
       dirname: logDir + '/error', // log file /logs/error/*.log in save
-      filename: `%DATE%.log`,
+      filename: '%DATE%.log',
       maxFiles: 30, // 30 Days saved
       handleExceptions: true,
       json: false,

@@ -59,7 +59,7 @@ export async function searchBuyerData(req: Request, res: Response) {
       filter: validated_req.filter,
       pagination: validated_req.pagination,
     });
-    return HttpResponse(res, 200, `records fetched successfully`, searchResult);
+    return HttpResponse(res, 200, 'records fetched successfully', searchResult);
   } catch (error) {
     return InternalServerException(res, error);
   }

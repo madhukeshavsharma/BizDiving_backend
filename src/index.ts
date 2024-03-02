@@ -8,13 +8,13 @@ async function app() {
 
   const port = +SERVER_PORT || 8080;
   server.listen(port, () => {
-    logger.info(`=================================`);
+    logger.info('=================================');
     logger.info(`======= ENV: ${NODE_ENV} =======`);
     logger.info(`🚀 App listening on the port ${port}`);
-    logger.info(`=================================`);
-    logger.info(`======= SWAGGER DOCS ============`);
+    logger.info('=================================');
+    logger.info('======= SWAGGER DOCS ============');
     logger.info(`http://localhost:${port}/core/swagger`);
-    logger.info(`=================================`);
+    logger.info('=================================');
   });
 }
 app();
