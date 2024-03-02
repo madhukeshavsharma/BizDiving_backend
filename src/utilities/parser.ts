@@ -62,7 +62,6 @@ export async function readExcel(fileName: string) {
       for (let i = 1; i < keys.length; i++) {
         obj[keys[i]] = values[i];
       }
-      // console.log(rowNumber, obj);
       data.push(obj);
     });
   });

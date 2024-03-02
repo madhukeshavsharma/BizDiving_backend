@@ -83,3 +83,12 @@ export async function searchImportData(req: Request, res: Response) {
     return InternalServerException(res, error);
   }
 }
+
+// "hshCode":”------”,
+// "companyName":”----”,
+// "type":””,
+// "Country":”----”,
+// "buyerName":”-----”,
+// "supplier_name":”------”,
+// "portCode":””,
+// "uqc":””,
