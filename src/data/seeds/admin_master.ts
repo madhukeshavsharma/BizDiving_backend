@@ -1,9 +1,9 @@
 import {Knex} from 'knex';
 import {encryptPassword} from '../../utilities/crypto';
-import {readAdminByLoginId} from '@/modules/user/model';
+import {readAdminByUserName} from '@/modules/user/model';
 
 export async function seed(knex: Knex): Promise<void> {
-  const result = await readAdminByLoginId('superadminn');
+  const result = await readAdminByUserName('superadminn');
   if (result) return;
   // Deletes ALL existing entries
   // await knex(admintable.TableName).del();

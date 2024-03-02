@@ -23,13 +23,15 @@ export async function readAdminById(admin_id: number): Promise<IAdmin> {
   return result;
 }
 
-export async function readAdminByLoginId(
-  admin_login_id: string
+export async function readAdminByUserName(
+  admin_user_name: string
 ): Promise<IAdmin> {
-  logger.debug('reading admin by login id', admin_login_id);
+  logger.debug('reading admin by login id', admin_user_name);
 
   const result: IAdmin = (
-    await DB.read('admin_master').select('*').where({login_id: admin_login_id})
+    await DB.read('admin_master')
+      .select('*')
+      .where({user_name: admin_user_name})
   )[0];
   return result;
 }
