@@ -43,7 +43,10 @@ export async function uploadExportData(req: Request, res: Response) {
       await batchInsertBuyerDetails(trx, buyer_details, 1000);
       logger.info('BATCH INSERTION COMPLETED FOR BUYER DETAILS RECORDS');
       await trx.commit();
-    } catch (error) {}
+    } catch (error) {
+      await trx.rollback();
+      throw error;
+    }
     return HttpResponse(
       res,
       200,

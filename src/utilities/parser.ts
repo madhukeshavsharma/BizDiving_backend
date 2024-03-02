@@ -1,6 +1,7 @@
 // import xlsx from 'xlsx';
 import path from 'path';
 import {logger} from './logger/winston_logger';
+import excel from 'exceljs';
 // import {logger} from './logger/winston_logger';
 // const ExcelJS = require('exceljs');
 // import fs from 'fs';
@@ -41,23 +42,23 @@ import {logger} from './logger/winston_logger';
 // }
 
 export async function readExcel(fileName: string) {
-  const excel = require('exceljs');
   const workbook = new excel.Workbook();
   // use readFile for testing purpose
   // await workbook.xlsx.load(objDescExcel.buffer);
   await workbook.xlsx.readFile(
     path.join(__dirname, '..', '..', '/public/', fileName)
   );
+  logger.info('Completed reading file from xlsx');
   const data = [];
-  workbook.worksheets.forEach(function (sheet) {
+  workbook.worksheets.forEach((sheet: any) => {
     // read first row as data keys
-    let firstRow = sheet.getRow(1);
+    const firstRow = sheet.getRow(1);
     if (!firstRow.cellCount) return;
-    let keys = firstRow.values;
+    const keys = firstRow.values;
     sheet.eachRow((row, rowNumber) => {
-      if (rowNumber == 1) return;
-      let values = row.values;
-      let obj = {};
+      if (rowNumber === 1) return;
+      const values = row.values;
+      const obj = {};
       for (let i = 1; i < keys.length; i++) {
         obj[keys[i]] = values[i];
       }
