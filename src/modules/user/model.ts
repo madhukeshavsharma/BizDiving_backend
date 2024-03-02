@@ -14,6 +14,22 @@ export async function createAdmin(admin: IAdmin): Promise<IAdmin> {
 export async function readAdminById(admin_id: number): Promise<IAdmin> {
   logger.debug('reading admin by id', admin_id);
 
-  const result: IAdmin = (await DB.read('admin_master').returning('*'))[0];
+  const result: IAdmin = (
+    await DB.read('admin_master')
+      .select('*')
+      .where({id: admin_id})
+      .returning('*')
+  )[0];
+  return result;
+}
+
+export async function readAdminByLoginId(
+  admin_login_id: string
+): Promise<IAdmin> {
+  logger.debug('reading admin by login id', admin_login_id);
+
+  const result: IAdmin = (
+    await DB.read('admin_master').select('*').where({login_id: admin_login_id})
+  )[0];
   return result;
 }

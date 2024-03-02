@@ -1,7 +1,7 @@
-import {createServer} from './server';
-import {logger} from './utilities/logger/winston_logger';
 import {NODE_ENV} from './config/index';
 import {SERVER_PORT} from './config/index';
+import {createServer} from './server';
+import {logger} from './utilities/logger/winston_logger';
 
 async function app() {
   const server = await createServer();

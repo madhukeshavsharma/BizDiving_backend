@@ -56,6 +56,7 @@ async function seed() {
     logger.info('Ran seed: Finish ');
   } catch (error) {
     logger.error('Database seed Error!!', error);
+    throw error;
   }
 }
 async function migrate() {
@@ -126,8 +127,8 @@ export async function connectdb() {
     return true;
   } catch (error) {
     logger.error('Database Connection Error!!', error);
+    throw error;
   }
-  return false;
 }
 export async function getTransaction(): Promise<Knex.Transaction<any, any[]>> {
   const trx: Knex.Transaction = await DB.write.transaction();
