@@ -106,3 +106,64 @@ export async function processImportData(data: IExcelImport[]) {
     import_warnings,
   };
 }
+
+//Exporter new columns
+
+// Shipment ID
+// Date
+// Port of Loading
+// Mode of Shipment
+// Month
+// HS Code
+// Product Description
+// Quantity
+// Unit Quantity Code
+// Unit Rate in FC
+// Currency
+// Unit Value USD
+// Total Value USD
+// Port of Discharge
+// Country of Destination
+// Importer Name
+// Importer Address
+// IEC
+// Exporter Name
+// Exporter Address
+// Exporter City State
+// Exporter PIN
+// Exporter Phone
+// Exporter Mail
+// Exporter Contact Person 1
+// Exporter Contact Person 2
+
+//Import new columns
+// Port of Discharge/ Port Code
+// Mode of Shipment
+// Shipment ID
+// Date
+// BE Type
+// AG
+// Month
+// HS CODE
+// Country of Origin
+// Product Description
+// INVOICE CURRENCY
+// Invoice Unit Price FC
+// Quantity
+// Unit Quantity Code
+// Unit Price USD
+// Total Value USD
+// Total Duty USD
+// CHA Name
+// IEC
+// Importer Name
+// Port of Loading
+// Exporter Name
+// Exporter Address
+// Importer Address
+// Importer City State
+// Importer PIN
+// Importer Phone
+// Importer Mail
+// Importer Contact Person 1
+// Importer Contact Person 2
