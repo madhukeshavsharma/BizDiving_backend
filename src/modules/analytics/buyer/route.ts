@@ -1,4 +1,4 @@
-import express, {Request, Response} from 'express';
+import express from 'express';
 import * as controller from './controller';
 
 const customer_routes = express.Router();
@@ -11,7 +11,7 @@ export default {customer_routes, admin_routes};
 
 /** POST - UPLOAD BUYER EXCEL
  * @openapi
- *"/analytics/buyer/upload":
+ *"/analytics/admin/buyer/upload":
  *  post:
  *    description: "upload excel"
  *    tags:
