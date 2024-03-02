@@ -10,3 +10,10 @@ export async function createAdmin(admin: IAdmin): Promise<IAdmin> {
   )[0];
   return result;
 }
+
+export async function readAdminById(admin_id: number): Promise<IAdmin> {
+  logger.debug('reading admin by id', admin_id);
+
+  const result: IAdmin = (await DB.read('admin_master').returning('*'))[0];
+  return result;
+}
